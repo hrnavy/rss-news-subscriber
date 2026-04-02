@@ -1,0 +1,22 @@
+[project]
+name = "rss-news"
+version = "0.1.0"
+description = "RSS 新闻阅读器 - 订阅、抓取、智能分析"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "feedparser>=6.0.12",
+    "httpx>=0.28.1",
+    "openai>=2.30.0",
+    "pyyaml>=6.0.2",
+    "requests>=2.33.1",
+    "rich>=14.3.3",
+    "typer>=0.24.1",
+]
+
+[project.scripts]
+rss-news = "rss_news.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
