@@ -64,9 +64,11 @@ def init_database() -> None:
     
     创建数据库文件和所有必要的表结构。
     如果表已存在，则不会重新创建。
+    同时运行数据库迁移。
     """
-    from rss_news.db.schema import create_tables
+    from rss_news.db.schema import create_tables, run_migrations
     
     ensure_db_directory()
     with get_connection() as conn:
         create_tables(conn)
+        run_migrations(conn)

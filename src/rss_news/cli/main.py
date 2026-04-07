@@ -10,7 +10,7 @@ import typer
 from rich.console import Console
 from rich.panel import Panel
 
-from rss_news.cli import feed, article, llm, fetch_cmd, play_cmd
+from rss_news.cli import feed, article, llm, fetch_cmd, play_cmd, daemon_cmd
 from rss_news.db.connection import init_database
 
 app = typer.Typer(
@@ -47,6 +47,7 @@ app.add_typer(feed.app, name="feed", help="订阅源管理")
 app.add_typer(article.app, name="article", help="文章管理")
 app.add_typer(llm.app, name="llm", help="LLM 智能处理")
 app.add_typer(play_cmd.app, name="play", help="新闻播放器")
+app.add_typer(daemon_cmd.app, name="daemon", help="后台服务")
 
 
 @app.command("fetch")

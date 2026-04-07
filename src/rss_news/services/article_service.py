@@ -310,28 +310,65 @@ class ArticleService:
         self,
         limit: int = 100,
     ) -> list[Article]:
-        """获取没有摘要的文章
+        """获取没有摘要的文章（排除标题文章）
         
-        用于 LLM 批量处理。
+        用于 LLM 批量处理。标题文章（content 为空）不参与 LLM 处理。
         
         Args:
             limit: 返回数量限制
             
         Returns:
-            未处理的文章列表
+            未处理的文章列表（不含标题文章）
         """
         with get_connection() as conn:
             cursor = conn.execute(
                 """SELECT id, feed_id, title, link, content, summary, category, 
                           keywords, published_at, created_at
                    FROM articles 
-                   WHERE summary IS NULL
+                   WHERE summary IS NULL AND content != ''
                    ORDER BY published_at DESC
                    LIMIT ?""",
                 (limit,)
             )
             rows = cursor.fetchall()
             return [Article.from_row(row) for row in rows]
+    
+    def fetch_content(self, article_id: int) -> tuple[bool, str]:
+        """获取文章原文（预留接口）
+        
+        对于标题源的文章，尝试获取原文内容。
+        当前为预留接口，返回未实现提示。
+        
+        Args:
+            article_id: 文章 ID
+            
+        Returns:
+            (成功标志, 消息)
+        """
+        article = self.get_article(article_id)
+        if not article:
+            return False, f"文章不存在: ID={article_id}"
+        
+        if article.content:
+            return False, "文章已有内容，无需重新获取"
+        
+        # 预留接口：此处应调用爬虫/浏览器自动化工具获取原文
+        # 当前返回未实现提示
+        return False, "原文获取功能尚未实现，请稍后重试"
+    
+    def is_title_article(self, article_id: int) -> bool:
+        """判断文章是否为标题文章
+        
+        Args:
+            article_id: 文章 ID
+            
+        Returns:
+            True 如果是标题文章（content 为空）
+        """
+        article = self.get_article(article_id)
+        if not article:
+            return False
+        return not article.content
     
     def delete_article(self, article_id: int) -> bool:
         """删除文章

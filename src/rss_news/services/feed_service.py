@@ -50,6 +50,7 @@ class FeedService:
         url: str,
         title: Optional[str] = None,
         description: Optional[str] = None,
+        source_note: str = "",
         skip_validation: bool = False,
     ) -> Feed:
         """添加新的订阅源
@@ -60,6 +61,7 @@ class FeedService:
             url: RSS 源 URL
             title: 订阅源标题（可选，默认使用 RSS 源标题）
             description: 订阅源描述（可选，默认使用 RSS 源描述）
+            source_note: 来源说明（如"标题来源"、"全文来源"）
             skip_validation: 是否跳过验证（默认 False）
             
         Returns:
@@ -97,6 +99,7 @@ class FeedService:
             title=title,
             url=url,
             description=description,
+            source_note=source_note,
             is_active=1,
         )
         
@@ -106,8 +109,8 @@ class FeedService:
             cursor = conn.cursor()
             cursor.execute(
                 """
-                INSERT INTO feeds (title, url, description, is_active, last_fetched, created_at)
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO feeds (title, url, description, source_note, is_active, last_fetched, created_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
                 """,
                 feed.to_tuple(),
             )
@@ -138,7 +141,7 @@ class FeedService:
     def update_feed(self, feed_id: int, **kwargs) -> Feed:
         """更新订阅源信息
         
-        支持更新 title、url、description、is_active 字段。
+        支持更新 title、url、description、source_note、is_active 字段。
         
         Args:
             feed_id: 订阅源 ID
@@ -151,7 +154,7 @@ class FeedService:
             FeedNotFoundError: 订阅源不存在
             FeedAlreadyExistsError: 新 URL 已被其他订阅源使用
         """
-        allowed_fields = {'title', 'url', 'description', 'is_active'}
+        allowed_fields = {'title', 'url', 'description', 'source_note', 'is_active'}
         update_fields = {k: v for k, v in kwargs.items() if k in allowed_fields}
         
         if not update_fields:
@@ -161,7 +164,7 @@ class FeedService:
             cursor = conn.cursor()
             
             cursor.execute(
-                "SELECT id, title, url, description, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
+                "SELECT id, title, url, description, source_note, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
                 (feed_id,),
             )
             row = cursor.fetchone()
@@ -185,7 +188,7 @@ class FeedService:
             )
             
             cursor.execute(
-                "SELECT id, title, url, description, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
+                "SELECT id, title, url, description, source_note, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
                 (feed_id,),
             )
             updated_row = cursor.fetchone()
@@ -207,7 +210,7 @@ class FeedService:
         with get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute(
-                "SELECT id, title, url, description, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
+                "SELECT id, title, url, description, source_note, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
                 (feed_id,),
             )
             row = cursor.fetchone()
@@ -231,12 +234,12 @@ class FeedService:
             
             if is_active is None:
                 cursor.execute(
-                    "SELECT id, title, url, description, is_active, last_fetched, created_at FROM feeds ORDER BY created_at DESC"
+                    "SELECT id, title, url, description, source_note, is_active, last_fetched, created_at FROM feeds ORDER BY created_at DESC"
                 )
             else:
                 active_value = 1 if is_active else 0
                 cursor.execute(
-                    "SELECT id, title, url, description, is_active, last_fetched, created_at FROM feeds WHERE is_active = ? ORDER BY created_at DESC",
+                    "SELECT id, title, url, description, source_note, is_active, last_fetched, created_at FROM feeds WHERE is_active = ? ORDER BY created_at DESC",
                     (active_value,),
                 )
             
@@ -262,14 +265,15 @@ class FeedService:
             cursor = conn.cursor()
             
             cursor.execute(
-                "SELECT id, title, url, description, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
+                "SELECT id, title, url, description, source_note, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
                 (feed_id,),
             )
             row = cursor.fetchone()
             if not row:
                 raise FeedNotFoundError(f"订阅源不存在: ID={feed_id}")
             
-            current_status = row[4]
+            feed = Feed.from_row(row)
+            current_status = feed.is_active
             new_status = 0 if current_status == 1 else 1
             
             cursor.execute(
@@ -278,7 +282,7 @@ class FeedService:
             )
             
             cursor.execute(
-                "SELECT id, title, url, description, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
+                "SELECT id, title, url, description, source_note, is_active, last_fetched, created_at FROM feeds WHERE id = ?",
                 (feed_id,),
             )
             updated_row = cursor.fetchone()

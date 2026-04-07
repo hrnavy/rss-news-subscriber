@@ -120,12 +120,13 @@ class FeedFetcher:
             )
             return cursor.fetchone() is not None
     
-    def _save_article(self, feed_id: int, article: ParsedArticle) -> bool:
+    def _save_article(self, feed_id: int, article: ParsedArticle, is_title_only: bool = False) -> bool:
         """保存文章到数据库
         
         Args:
             feed_id: 订阅源 ID
             article: 解析后的文章数据
+            is_title_only: 是否为标题源（标题源只保存标题，不保存内容）
             
         Returns:
             True 如果保存成功（新文章），False 如果文章已存在
@@ -137,19 +138,38 @@ class FeedFetcher:
         
         try:
             with get_connection() as conn:
-                conn.execute(
-                    """INSERT INTO articles 
-                       (feed_id, title, link, content, published_at, created_at)
-                       VALUES (?, ?, ?, ?, ?, ?)""",
-                    (
-                        feed_id,
-                        article.title,
-                        article.link,
-                        article.content,
-                        article.published_at,
-                        datetime.now().isoformat(),
+                if is_title_only:
+                    # 标题源：content 为空，summary 为标题，keywords 为空
+                    conn.execute(
+                        """INSERT INTO articles 
+                           (feed_id, title, link, content, summary, keywords, published_at, created_at)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                        (
+                            feed_id,
+                            article.title,
+                            article.link,
+                            "",  # content 为空
+                            article.title,  # summary 为标题
+                            None,  # keywords 为空
+                            article.published_at,
+                            datetime.now().isoformat(),
+                        )
                     )
-                )
+                else:
+                    # 全文源：正常保存
+                    conn.execute(
+                        """INSERT INTO articles 
+                           (feed_id, title, link, content, published_at, created_at)
+                           VALUES (?, ?, ?, ?, ?, ?)""",
+                        (
+                            feed_id,
+                            article.title,
+                            article.link,
+                            article.content,
+                            article.published_at,
+                            datetime.now().isoformat(),
+                        )
+                    )
             logger.debug(f"保存新文章: {article.title}")
             return True
         except Exception as e:
@@ -184,6 +204,11 @@ class FeedFetcher:
         
         logger.info(f"开始抓取订阅源: {feed.title} ({feed.url})")
         
+        # 判断是否为标题源
+        is_title_only = feed.is_title_only
+        if is_title_only:
+            logger.info(f"检测到标题源: {feed.title}")
+        
         try:
             # 获取并解析 RSS
             parsed_feed = await self._parser.fetch_and_parse(feed.url)
@@ -191,7 +216,7 @@ class FeedFetcher:
             # 保存文章
             new_count = 0
             for article in parsed_feed.articles:
-                if self._save_article(feed_id, article):
+                if self._save_article(feed_id, article, is_title_only=is_title_only):
                     new_count += 1
             
             # 更新最后抓取时间

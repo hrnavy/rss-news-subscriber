@@ -182,7 +182,7 @@ def extract_keywords(
 @app.command("process-all")
 def process_all_articles(
     limit: int = typer.Option(
-        10, "--limit", "-l", help="处理文章数量限制"
+        9999, "--limit", "-l", help="处理文章数量限制"
     ),
     skip_summary: bool = typer.Option(
         False, "--skip-summary", help="跳过摘要生成"

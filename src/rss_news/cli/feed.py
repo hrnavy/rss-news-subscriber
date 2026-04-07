@@ -30,6 +30,9 @@ def add_feed(
     description: Optional[str] = typer.Option(
         None, "--description", "-d", help="订阅源描述"
     ),
+    note: str = typer.Option(
+        "", "--note", "-n", help="来源说明（如'标题来源'、'全文来源'）"
+    ),
     skip_validation: bool = typer.Option(
         False, "--skip-validation", help="跳过 RSS 源验证"
     ),
@@ -42,6 +45,7 @@ def add_feed(
         rss-news feed add https://example.com/feed.xml
         rss-news feed add https://example.com/feed.xml "我的订阅"
         rss-news feed add https://example.com/feed.xml "我的订阅" -d "描述信息"
+        rss-news feed add https://example.com/feed.xml --note "标题来源"
     """
     service = FeedService()
     
@@ -52,6 +56,7 @@ def add_feed(
                     url=url,
                     title=title,
                     description=description,
+                    source_note=note,
                     skip_validation=skip_validation,
                 )
             
@@ -61,6 +66,8 @@ def add_feed(
             console.print(f"  URL: {feed.url}")
             if feed.description:
                 console.print(f"  描述: {feed.description}")
+            if feed.source_note:
+                console.print(f"  来源说明: [yellow]{feed.source_note}[/yellow]")
                 
         except FeedAlreadyExistsError:
             console.print(f"[red]✗[/red] 订阅源已存在: {url}")
@@ -101,18 +108,19 @@ def list_feeds(
     table = Table(title="订阅源列表", show_header=True, header_style="bold blue")
     table.add_column("ID", style="cyan", justify="right", width=4)
     table.add_column("标题", width=25)
-    table.add_column("URL", width=40)
+    table.add_column("来源说明", width=15)
     table.add_column("状态", justify="center", width=6)
     table.add_column("最后抓取", width=19)
     
     for feed in feeds:
         status = "[green]活跃[/green]" if feed.is_active_bool else "[red]停用[/red]"
         last_fetched = feed.last_fetched[:19] if feed.last_fetched else "-"
+        source_note = feed.source_note[:15] if feed.source_note else "-"
         
         table.add_row(
             str(feed.id),
             feed.title[:25] + ("..." if len(feed.title) > 25 else ""),
-            feed.url[:40] + ("..." if len(feed.url) > 40 else ""),
+            source_note,
             status,
             last_fetched,
         )

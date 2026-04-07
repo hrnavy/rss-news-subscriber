@@ -35,3 +35,17 @@ database:
 display:
   # 每页显示的新闻数量
   page_size: 20
+
+# 后台服务配置
+daemon:
+  # 是否启用后台服务
+  enabled: true
+  
+  # 抓取间隔（秒），默认 1 小时
+  fetch_interval: 3600
+  
+  # LLM 处理间隔（秒），默认 2 小时
+  llm_interval: 7200
+  
+  # 日志文件路径
+  log_file: logs/daemon.log

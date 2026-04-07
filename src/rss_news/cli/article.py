@@ -77,7 +77,13 @@ def list_articles(
         category = article.category or "-"
         published = article.published_at[:19] if article.published_at else "-"
         
-        llm_status = "[green]✓[/green]" if article.has_llm_analysis() else "[dim]-[/dim]"
+        # 判断文章状态
+        if not article.content:
+            llm_status = "[yellow]待获取[/yellow]"  # 标题文章，待获取原文
+        elif article.has_llm_analysis():
+            llm_status = "[green]✓[/green]"
+        else:
+            llm_status = "[dim]-[/dim]"
         
         table.add_row(
             str(article.id),
@@ -234,3 +240,39 @@ def count_articles(
         console.print(f"订阅源 '[cyan]{feed_title}[/cyan]' 共有 [bold]{count}[/bold] 篇文章")
     else:
         console.print(f"共有 [bold]{count}[/bold] 篇文章")
+
+
+@app.command("fetch-content")
+def fetch_content(
+    article_id: int = typer.Argument(..., help="文章 ID"),
+):
+    """获取文章原文
+    
+    对于标题源的文章，尝试获取原文内容。
+    当前为预留接口，尚未实现具体爬虫逻辑。
+    
+    示例:
+        rss-news article fetch-content 123
+    """
+    article_service = ArticleService()
+    
+    article = article_service.get_article(article_id)
+    if not article:
+        console.print(f"[red]✗[/red] 文章不存在: ID={article_id}")
+        raise typer.Exit(1)
+    
+    if article.content:
+        console.print(f"[yellow]文章已有内容，无需重新获取[/yellow]")
+        console.print(f"  标题: [bold]{article.title}[/bold]")
+        return
+    
+    console.print(f"[bold blue]正在获取文章原文...[/bold]")
+    console.print(f"  标题: [bold]{article.title}[/bold]")
+    console.print(f"  链接: {article.link}")
+    
+    success, message = article_service.fetch_content(article_id)
+    
+    if success:
+        console.print(f"[green]✓[/green] {message}")
+    else:
+        console.print(f"[yellow]⚠[/yellow] {message}")

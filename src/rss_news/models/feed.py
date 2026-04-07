@@ -17,6 +17,7 @@ class Feed:
         title: 订阅源标题
         url: 订阅源 URL（唯一）
         description: 订阅源描述
+        source_note: 来源说明（如"标题来源"、"全文来源"）
         is_active: 是否活跃（1=活跃，0=停用）
         last_fetched: 最后抓取时间
         created_at: 创建时间
@@ -25,6 +26,7 @@ class Feed:
     title: str = ""
     url: str = ""
     description: str = ""
+    source_note: str = ""
     is_active: int = 1
     last_fetched: Optional[str] = None
     created_at: Optional[str] = None
@@ -47,15 +49,28 @@ class Feed:
         Returns:
             Feed 实例
         """
-        return cls(
-            id=row[0],
-            title=row[1],
-            url=row[2],
-            description=row[3],
-            is_active=row[4],
-            last_fetched=row[5],
-            created_at=row[6],
-        )
+        # 兼容有无 source_note 字段的情况
+        if len(row) >= 8:
+            return cls(
+                id=row[0],
+                title=row[1],
+                url=row[2],
+                description=row[3],
+                source_note=row[4] or "",
+                is_active=row[5],
+                last_fetched=row[6],
+                created_at=row[7],
+            )
+        else:
+            return cls(
+                id=row[0],
+                title=row[1],
+                url=row[2],
+                description=row[3],
+                is_active=row[4],
+                last_fetched=row[5],
+                created_at=row[6],
+            )
     
     def to_tuple(self) -> tuple:
         """转换为数据库插入/更新用的元组
@@ -67,6 +82,7 @@ class Feed:
             self.title,
             self.url,
             self.description,
+            self.source_note,
             self.is_active,
             self.last_fetched,
             self.created_at,
@@ -84,6 +100,17 @@ class Feed:
             True 如果活跃，否则 False
         """
         return self.is_active == 1
+    
+    @property
+    def is_title_only(self) -> bool:
+        """判断是否为标题源
+        
+        通过 source_note 中是否包含"标题"字样判断。
+        
+        Returns:
+            True 如果是标题源
+        """
+        return "标题" in self.source_note
 
 
 @dataclass
@@ -95,6 +122,7 @@ class FeedCreate:
     title: str
     url: str
     description: str = ""
+    source_note: str = ""
     is_active: int = 1
     
     def to_feed(self) -> Feed:
@@ -107,6 +135,7 @@ class FeedCreate:
             title=self.title,
             url=self.url,
             description=self.description,
+            source_note=self.source_note,
             is_active=self.is_active,
         )
 
@@ -120,6 +149,7 @@ class FeedUpdate:
     title: Optional[str] = None
     url: Optional[str] = None
     description: Optional[str] = None
+    source_note: Optional[str] = None
     is_active: Optional[int] = None
     
     def has_updates(self) -> bool:
@@ -132,5 +162,6 @@ class FeedUpdate:
             self.title is not None,
             self.url is not None,
             self.description is not None,
+            self.source_note is not None,
             self.is_active is not None,
         ])

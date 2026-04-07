@@ -45,6 +45,16 @@ class DisplayConfig:
 
 
 @dataclass
+class DaemonConfig:
+    """后台服务配置"""
+    
+    enabled: bool = True
+    fetch_interval: int = 3600  # 抓取间隔（秒）
+    llm_interval: int = 7200    # LLM处理间隔（秒）
+    log_file: str = "logs/daemon.log"
+
+
+@dataclass
 class Config:
     """应用程序总配置"""
     
@@ -52,6 +62,7 @@ class Config:
     fetch: FetchConfig = field(default_factory=FetchConfig)
     database: DatabaseConfig = field(default_factory=DatabaseConfig)
     display: DisplayConfig = field(default_factory=DisplayConfig)
+    daemon: DaemonConfig = field(default_factory=DaemonConfig)
 
 
 def get_default_config_path() -> Path:
@@ -205,6 +216,15 @@ def create_config_from_dict(data: dict[str, Any]) -> Config:
     if display_data := data.get("display"):
         config.display = DisplayConfig(
             page_size=display_data.get("page_size", config.display.page_size),
+        )
+    
+    # 填充 Daemon 配置
+    if daemon_data := data.get("daemon"):
+        config.daemon = DaemonConfig(
+            enabled=daemon_data.get("enabled", config.daemon.enabled),
+            fetch_interval=daemon_data.get("fetch_interval", config.daemon.fetch_interval),
+            llm_interval=daemon_data.get("llm_interval", config.daemon.llm_interval),
+            log_file=daemon_data.get("log_file", config.daemon.log_file),
         )
     
     return config

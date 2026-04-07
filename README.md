@@ -82,7 +82,7 @@ uv run rss-news feed add https://feeds.bbci.co.uk/news/rss.xml
 uv run rss-news feed list
 
 # 删除订阅源
-uv run rss-news feed delete <feed_id>
+uv run rss-news feed remove <feed_id>
 ```
 
 ### 新闻抓取
@@ -127,6 +127,40 @@ uv run rss-news play --no-summary
 - **空格** - 暂停/继续
 - **N** - 跳到下一条
 - **Q** - 退出播放器
+
+### 定时任务（后台服务）
+
+```bash
+# 启动后台服务（前台运行，按 Ctrl+C 停止）
+uv run rss-news daemon
+
+# 安装为 Windows 任务计划（开机自启）
+uv run rss-news daemon install
+
+# 卸载任务计划
+uv run rss-news daemon uninstall
+
+# 查看服务状态
+uv run rss-news daemon status
+
+# 查看日志
+uv run rss-news daemon logs
+
+# 立即执行一次任务
+uv run rss-news daemon run fetch   # 只抓取
+uv run rss-news daemon run llm     # 只处理
+uv run rss-news daemon run all     # 全部
+```
+
+配置 `config.yaml` 中的 `daemon` 部分可调整间隔：
+
+```yaml
+daemon:
+  enabled: true
+  fetch_interval: 3600  # 抓取间隔（秒）
+  llm_interval: 7200    # LLM处理间隔（秒）
+  log_file: logs/daemon.log
+```
 
 ## 项目结构
 

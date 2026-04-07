@@ -1,0 +1,872 @@
+2026-04-03 16:28:44,778 - INFO - 定时任务调度器启动
+2026-04-03 16:28:44,778 - INFO - 配置: 抓取间隔 28800 秒, LLM 间隔 20000 秒
+2026-04-03 16:28:44,780 - INFO - 开始执行抓取任务
+2026-04-03 16:28:44,781 - INFO - 开始抓取 13 个订阅源，并发数: [Feed(id=15, title='全球突发新闻 Lite', url='https://breaking.buzzing.cc/lite/feed.xml', description='用中文浏览全球突发新闻', is_active=1, last_fetched='2026-04-03T15:37:39.877135', created_at='2026-04-03T11:08:45.529340'), Feed(id=14, title='路透社最新报道 Lite', url='https://reutersnew.buzzing.cc/lite/feed.xml', description='用中文浏览路透社最新报道', is_active=1, last_fetched='2026-04-03T15:37:37.806233', created_at='2026-04-03T11:08:09.958823'), Feed(id=12, title='摩根士丹利中国 - 观点与洞察', url='https://quanwenrss.com/morganstanley/china', description='', is_active=1, last_fetched='2026-04-03T15:37:35.850529', created_at='2026-04-03T10:24:18.940673'), Feed(id=11, title='Morgan Stanley - Ideas and Insights', url='https://quanwenrss.com/morganstanley/global', description='', is_active=1, last_fetched='2026-04-03T15:37:44.360150', created_at='2026-04-03T10:24:02.480558'), Feed(id=10, title='AP News ap-fact-check Latest', url='https://quanwenrss.com/apnews/ap-fact-check', description='AP News ap-fact-check 分类最新文章聚合', is_active=1, last_fetched='2026-04-03T15:37:34.914532', created_at='2026-04-03T10:23:35.855169'), Feed(id=9, title='SCMP Full Text Feed', url='https://quanwenrss.com/scmp', description='South China Morning Post articles with full content', is_active=1, last_fetched='2026-04-03T15:37:33.998879', created_at='2026-04-03T10:23:10.905625'), Feed(id=8, title='Politico White-House News', url='https://quanwenrss.com/politico/white-house', description='Latest White-House news from Politico', is_active=1, last_fetched='2026-04-03T15:37:32.815085', created_at='2026-04-03T10:22:44.167578'), Feed(id=7, title='Al Jazeera – Breaking News, World News and Video from Al Jazeera', url='https://www.aljazeera.com/xml/rss/all.xml', description='Breaking News, World News and Video from Al Jazeera', is_active=1, last_fetched='2026-04-03T15:37:32.612738', created_at='2026-04-02T15:16:29.358903'), Feed(id=5, title='Politico Latest News', url='https://quanwenrss.com/politico', description='Latest news from Politico', is_active=1, last_fetched='2026-04-03T15:37:30.663441', created_at='2026-04-02T15:00:44.824452'), Feed(id=4, title='Bloomberg Latest', url='https://quanwenrss.com/bloomberg', description='Bloomberg Latest全文RSS。获取更多全文RSS：https://quanwenrss.com', is_active=1, last_fetched='2026-04-03T15:37:29.294138', created_at='2026-04-02T15:00:21.739850'), Feed(id=3, title='AP News Latest', url='https://quanwenrss.com/apnews', description='AP News 最新文章聚合', is_active=1, last_fetched='2026-04-03T15:37:30.471487', created_at='2026-04-02T13:45:51.613979'), Feed(id=2, title='The Wall Street Journal', url='https://feedx.net/rss/wsjen.xml', description='The Wall Street Journal全文RSS。获取更多全文RSS：https://feedx.net', is_active=1, last_fetched='2026-04-03T15:37:40.940936', created_at='2026-04-02T13:43:34.399875'), Feed(id=1, title='未知标题', url='https://feeds.bbci.co.uk/news/rss.xml', description='', is_active=1, last_fetched='2026-04-03T15:37:26.137908', created_at='2026-04-02T11:49:18.792559')]
+2026-04-03 16:28:44,782 - ERROR - 抓取任务失败: '<' not supported between instances of 'list' and 'int'
+2026-04-03 16:29:14,790 - INFO - 开始执行 LLM 处理任务
+2026-04-03 16:36:55,818 - INFO - 收到停止信号
+2026-04-03 16:36:55,819 - INFO - 定时任务调度器停止
+2026-04-03 16:42:59,431 - INFO - 开始执行抓取任务
+2026-04-03 16:42:59,470 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-03 16:42:59,470 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-03 16:42:59,470 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-03 16:43:00,025 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-03 16:43:00,026 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-03 16:43:00,027 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-03 16:43:00,027 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-03 16:43:00,753 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-03 16:43:00,904 - INFO - 解析完成: BBC News - 39 篇文章
+2026-04-03 16:43:02,102 - INFO - 抓取完成: 未知标题 - 1/39 篇新文章
+2026-04-03 16:43:02,103 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-03 16:43:02,103 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-03 16:43:02,107 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-03 16:43:02,128 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-03 16:43:02,368 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-03 16:43:02,371 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-03 16:43:02,371 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-03 16:43:03,079 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-03 16:43:07,806 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-03 16:43:08,022 - INFO - 抓取完成: AP News Latest - 0/25 篇新文章
+2026-04-03 16:43:08,024 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-03 16:43:08,024 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-03 16:43:08,025 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-03 16:43:08,087 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-03 16:43:08,483 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-03 16:43:08,498 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-03 16:43:10,144 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 4/25 篇新文章
+2026-04-03 16:43:10,145 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-03 16:43:10,145 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-03 16:43:10,178 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-03 16:43:11,970 - INFO - 抓取完成: Bloomberg Latest - 5/20 篇新文章
+2026-04-03 16:43:11,972 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-03 16:43:11,972 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-03 16:43:12,006 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-03 16:43:12,229 - INFO - 抓取完成: Politico Latest News - 0/20 篇新文章
+2026-04-03 16:43:12,231 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-03 16:43:12,231 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-03 16:43:12,231 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-03 16:43:12,266 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-03 16:43:12,470 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-03 16:43:12,471 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-03 16:43:12,471 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-03 16:43:12,895 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-03 16:43:13,056 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-03 16:43:13,080 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-03 16:43:13,270 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-03 16:43:13,271 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-03 16:43:13,271 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-03 16:43:13,272 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-03 16:43:13,452 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-03 16:43:15,236 - INFO - 抓取完成: SCMP Full Text Feed - 5/20 篇新文章
+2026-04-03 16:43:15,237 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-03 16:43:15,238 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-03 16:43:15,267 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-03 16:43:15,453 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-03 16:43:15,454 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-03 16:43:15,455 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-03 16:43:15,455 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-03 16:43:15,468 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-03 16:43:15,655 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-03 16:43:16,579 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-03 16:43:17,110 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-03 16:43:17,538 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-03 16:43:22,087 - INFO - 抓取完成: 路透社最新报道 Lite - 13/300 篇新文章
+2026-04-03 16:43:22,280 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-03 16:43:22,653 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-03 16:43:22,653 - INFO - 全部抓取完成: 13/13 成功, 28 篇新文章
+2026-04-03 16:43:22,653 - INFO - 抓取完成: 13 个源, 28 篇新文章, 耗时 23.2 秒
+2026-04-03 17:21:52,790 - INFO - 定时任务调度器启动
+2026-04-03 17:21:52,809 - INFO - 配置: 抓取间隔 28800 秒, LLM 间隔 20000 秒
+2026-04-03 17:21:52,811 - INFO - 开始执行抓取任务
+2026-04-03 17:21:52,811 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-03 17:21:52,812 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-03 17:21:52,812 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-03 17:21:53,105 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-03 17:21:53,105 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-03 17:21:53,105 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-03 17:21:53,106 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-03 17:21:53,625 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-03 17:21:53,652 - INFO - 解析完成: BBC News - 36 篇文章
+2026-04-03 17:21:54,424 - INFO - 抓取完成: 未知标题 - 2/36 篇新文章
+2026-04-03 17:21:54,426 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-03 17:21:54,426 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-03 17:21:54,427 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-03 17:21:54,450 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-03 17:21:54,637 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-03 17:21:54,639 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-03 17:21:54,639 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-03 17:21:55,098 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-03 17:21:55,643 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-03 17:21:57,015 - INFO - 抓取完成: AP News Latest - 5/25 篇新文章
+2026-04-03 17:21:57,017 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-03 17:21:57,017 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-03 17:21:57,018 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-03 17:21:57,019 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-03 17:21:57,055 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-03 17:21:57,215 - INFO - 抓取完成: Bloomberg Latest - 0/20 篇新文章
+2026-04-03 17:21:57,217 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-03 17:21:57,217 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-03 17:21:57,268 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-03 17:21:58,257 - INFO - 抓取完成: Politico Latest News - 4/20 篇新文章
+2026-04-03 17:21:58,259 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-03 17:21:58,259 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-03 17:21:58,660 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-03 17:21:58,671 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-03 17:21:58,840 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 0/25 篇新文章
+2026-04-03 17:21:58,841 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-03 17:21:58,842 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-03 17:21:58,937 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-03 17:21:58,958 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-03 17:21:59,391 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-03 17:22:00,565 - INFO - 抓取完成: SCMP Full Text Feed - 4/20 篇新文章
+2026-04-03 17:22:00,567 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-03 17:22:00,567 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-03 17:22:00,569 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-03 17:22:00,605 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-03 17:22:00,773 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-03 17:22:00,775 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-03 17:22:00,775 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-03 17:22:00,803 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-03 17:22:00,973 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-03 17:22:00,976 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-03 17:22:00,976 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-03 17:22:01,398 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-03 17:22:01,408 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-03 17:22:01,566 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-03 17:22:01,568 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-03 17:22:01,568 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-03 17:22:01,569 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-03 17:22:01,569 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-03 17:22:01,604 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-03 17:22:01,756 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-03 17:22:01,927 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-03 17:22:04,781 - INFO - 抓取完成: 路透社最新报道 Lite - 11/300 篇新文章
+2026-04-03 17:22:05,135 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-03 17:22:05,348 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-03 17:22:05,573 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-03 17:22:05,574 - INFO - 全部抓取完成: 13/13 成功, 26 篇新文章
+2026-04-03 17:22:05,577 - INFO - 抓取完成: 13 个源, 26 篇新文章, 耗时 12.8 秒
+2026-04-03 17:22:22,826 - INFO - 开始执行 LLM 处理任务
+2026-04-03 17:37:25,116 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 902.3 秒
+2026-04-03 23:12:44,643 - INFO - 开始执行 LLM 处理任务
+2026-04-03 23:29:34,483 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 1009.8 秒
+2026-04-04 01:25:03,364 - INFO - 开始执行抓取任务
+2026-04-04 01:25:03,979 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-04 01:25:03,992 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-04 01:25:03,993 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-04 01:25:04,237 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-04 01:25:04,237 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-04 01:25:04,239 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-04 01:25:04,240 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-04 01:25:04,872 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-04 01:25:04,917 - INFO - 解析完成: BBC News - 34 篇文章
+2026-04-04 01:25:08,703 - INFO - 抓取完成: 未知标题 - 22/34 篇新文章
+2026-04-04 01:25:08,705 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-04 01:25:08,705 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-04 01:25:08,712 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-04 01:25:08,742 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-04 01:25:08,912 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-04 01:25:08,914 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-04 01:25:08,914 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-04 01:25:09,459 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-04 01:25:10,289 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-04 01:25:12,328 - INFO - 抓取完成: AP News Latest - 11/25 篇新文章
+2026-04-04 01:25:12,330 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-04 01:25:12,330 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-04 01:25:12,331 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-04 01:25:12,332 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-04 01:25:12,373 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-04 01:25:16,144 - INFO - 抓取完成: Bloomberg Latest - 20/20 篇新文章
+2026-04-04 01:25:16,146 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-04 01:25:16,146 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-04 01:25:16,181 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-04 01:25:18,469 - INFO - 抓取完成: Politico Latest News - 12/20 篇新文章
+2026-04-04 01:25:18,471 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-04 01:25:18,471 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-04 01:25:18,941 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-04 01:25:18,953 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-04 01:25:23,427 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 24/25 篇新文章
+2026-04-04 01:25:23,429 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-04 01:25:23,429 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-04 01:25:23,430 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-04 01:25:23,431 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-04 01:25:23,459 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-04 01:25:27,377 - INFO - 抓取完成: SCMP Full Text Feed - 20/20 篇新文章
+2026-04-04 01:25:27,379 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-04 01:25:27,379 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-04 01:25:27,418 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-04 01:25:27,569 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-04 01:25:27,570 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-04 01:25:27,571 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-04 01:25:28,242 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-04 01:25:28,354 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-04 01:25:28,372 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-04 01:25:28,535 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-04 01:25:28,537 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-04 01:25:28,537 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-04 01:25:28,559 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-04 01:25:28,718 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-04 01:25:28,721 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-04 01:25:28,721 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-04 01:25:29,074 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-04 01:25:29,206 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-04 01:25:29,399 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-04 01:25:29,635 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-04 01:25:29,636 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-04 01:25:29,863 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-04 01:26:06,016 - INFO - 抓取完成: 路透社最新报道 Lite - 167/300 篇新文章
+2026-04-04 01:26:06,038 - WARNING - 获取 RSS 超时 (尝试 1/3): https://quanwenrss.com/apnews/ap-fact-check
+2026-04-04 01:26:07,377 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-04 01:26:08,230 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-04 01:26:08,416 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-04 01:26:08,416 - INFO - 全部抓取完成: 13/13 成功, 276 篇新文章
+2026-04-04 01:26:08,416 - INFO - 抓取完成: 13 个源, 276 篇新文章, 耗时 65.1 秒
+2026-04-04 05:05:47,866 - INFO - 开始执行 LLM 处理任务
+2026-04-04 05:18:48,941 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 781.1 秒
+2026-04-04 09:29:08,696 - INFO - 开始执行抓取任务
+2026-04-04 09:29:08,740 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-04 09:29:08,746 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-04 09:29:08,748 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-04 09:29:08,896 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-04 09:29:08,896 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-04 09:29:08,896 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-04 09:29:08,896 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-04 09:29:09,080 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-04 09:29:09,110 - INFO - 解析完成: BBC News - 37 篇文章
+2026-04-04 09:29:13,309 - INFO - 抓取完成: 未知标题 - 20/37 篇新文章
+2026-04-04 09:29:13,314 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-04 09:29:13,314 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-04 09:29:13,315 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-04 09:29:13,339 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-04 09:29:13,517 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-04 09:29:13,519 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-04 09:29:13,519 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-04 09:29:13,938 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-04 09:29:14,766 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-04 09:29:16,676 - INFO - 抓取完成: AP News Latest - 8/25 篇新文章
+2026-04-04 09:29:16,677 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-04 09:29:16,677 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-04 09:29:16,679 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-04 09:29:16,679 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-04 09:29:16,711 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-04 09:29:18,551 - INFO - 抓取完成: Bloomberg Latest - 9/20 篇新文章
+2026-04-04 09:29:18,553 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-04 09:29:18,553 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-04 09:29:18,593 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-04 09:29:20,359 - INFO - 抓取完成: Politico Latest News - 8/20 篇新文章
+2026-04-04 09:29:20,361 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-04 09:29:20,361 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-04 09:29:21,783 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-04 09:29:21,799 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-04 09:29:25,558 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 20/25 篇新文章
+2026-04-04 09:29:25,559 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-04 09:29:25,559 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-04 09:29:25,560 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-04 09:29:25,561 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-04 09:29:25,591 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-04 09:29:27,892 - INFO - 抓取完成: SCMP Full Text Feed - 10/20 篇新文章
+2026-04-04 09:29:27,894 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-04 09:29:27,894 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-04 09:29:27,936 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-04 09:29:28,117 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-04 09:29:28,118 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-04 09:29:28,119 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-04 09:29:28,782 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-04 09:29:28,802 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-04 09:29:29,017 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-04 09:29:29,018 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-04 09:29:29,018 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-04 09:29:29,020 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-04 09:29:29,036 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-04 09:29:29,191 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-04 09:29:29,193 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-04 09:29:29,193 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-04 09:29:29,427 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-04 09:29:29,627 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-04 09:29:29,875 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-04 09:29:29,876 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-04 09:29:29,877 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-04 09:29:30,034 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-04 09:29:48,307 - INFO - 抓取完成: 路透社最新报道 Lite - 82/300 篇新文章
+2026-04-04 09:29:48,366 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-04 09:29:48,540 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-04 09:29:48,540 - INFO - 全部抓取完成: 13/13 成功, 157 篇新文章
+2026-04-04 09:29:48,541 - INFO - 抓取完成: 13 个源, 157 篇新文章, 耗时 39.8 秒
+2026-04-04 10:54:39,973 - INFO - 开始执行 LLM 处理任务
+2026-04-04 11:08:21,532 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 821.6 秒
+2026-04-04 16:43:39,466 - INFO - 开始执行 LLM 处理任务
+2026-04-04 16:57:31,081 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 831.6 秒
+2026-04-04 17:32:52,195 - INFO - 开始执行抓取任务
+2026-04-04 17:32:52,247 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-04 17:32:52,251 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-04 17:32:52,252 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-04 17:32:52,493 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-04 17:32:52,493 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-04 17:32:52,494 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-04 17:32:52,494 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-04 17:32:53,219 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-04 17:32:53,248 - INFO - 解析完成: BBC News - 43 篇文章
+2026-04-04 17:32:56,230 - INFO - 抓取完成: 未知标题 - 14/43 篇新文章
+2026-04-04 17:32:56,234 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-04 17:32:56,234 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-04 17:32:56,236 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-04 17:32:56,240 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-04 17:32:56,259 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-04 17:32:56,421 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-04 17:32:56,422 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-04 17:32:56,422 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-04 17:32:56,468 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-04 17:32:58,863 - INFO - 抓取完成: AP News Latest - 11/25 篇新文章
+2026-04-04 17:32:58,865 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-04 17:32:58,865 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-04 17:32:59,282 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-04 17:32:59,303 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-04 17:33:00,780 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 7/25 篇新文章
+2026-04-04 17:33:00,781 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-04 17:33:00,781 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-04 17:33:01,400 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-04 17:33:01,405 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-04 17:33:01,463 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-04 17:33:01,755 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-04 17:33:03,721 - INFO - 抓取完成: Bloomberg Latest - 9/20 篇新文章
+2026-04-04 17:33:03,722 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-04 17:33:03,723 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-04 17:33:03,760 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-04 17:33:03,937 - INFO - 抓取完成: Politico Latest News - 0/20 篇新文章
+2026-04-04 17:33:03,940 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-04 17:33:03,940 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-04 17:33:03,979 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-04 17:33:04,121 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-04 17:33:04,122 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-04 17:33:04,122 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-04 17:33:04,341 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-04 17:33:04,629 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-04 17:33:08,937 - INFO - 抓取完成: SCMP Full Text Feed - 20/20 篇新文章
+2026-04-04 17:33:08,939 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-04 17:33:08,939 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-04 17:33:08,940 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-04 17:33:08,941 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-04 17:33:08,960 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-04 17:33:09,129 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-04 17:33:09,131 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-04 17:33:09,131 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-04 17:33:09,179 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-04 17:33:09,329 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-04 17:33:09,331 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-04 17:33:09,331 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-04 17:33:09,557 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-04 17:33:09,568 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-04 17:33:09,721 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-04 17:33:09,847 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-04 17:33:10,061 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-04 17:33:10,287 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-04 17:33:10,288 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-04 17:33:10,446 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-04 17:33:20,387 - INFO - 抓取完成: 路透社最新报道 Lite - 48/300 篇新文章
+2026-04-04 17:33:20,387 - INFO - 全部抓取完成: 13/13 成功, 109 篇新文章
+2026-04-04 17:33:20,389 - INFO - 抓取完成: 13 个源, 109 篇新文章, 耗时 28.2 秒
+2026-04-04 22:33:08,595 - INFO - 开始执行 LLM 处理任务
+2026-04-04 22:47:45,565 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 877.0 秒
+2026-04-05 01:36:09,503 - INFO - 开始执行抓取任务
+2026-04-05 01:36:09,557 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-05 01:36:09,562 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-05 01:36:09,562 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-05 01:36:09,737 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-05 01:36:09,737 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-05 01:36:09,737 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-05 01:36:09,737 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-05 01:36:10,311 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-05 01:36:10,351 - INFO - 解析完成: BBC News - 29 篇文章
+2026-04-05 01:36:12,736 - INFO - 抓取完成: 未知标题 - 11/29 篇新文章
+2026-04-05 01:36:12,737 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-05 01:36:12,737 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-05 01:36:12,739 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-05 01:36:12,767 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-05 01:36:12,944 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-05 01:36:12,946 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-05 01:36:12,946 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-05 01:36:13,458 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-05 01:36:14,391 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-05 01:36:16,177 - INFO - 抓取完成: AP News Latest - 7/25 篇新文章
+2026-04-05 01:36:16,179 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-05 01:36:16,179 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-05 01:36:16,181 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-05 01:36:16,182 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-05 01:36:16,215 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-05 01:36:18,835 - INFO - 抓取完成: Bloomberg Latest - 12/20 篇新文章
+2026-04-05 01:36:18,837 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-05 01:36:18,837 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-05 01:36:18,879 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-05 01:36:20,602 - INFO - 抓取完成: Politico Latest News - 8/20 篇新文章
+2026-04-05 01:36:20,604 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-05 01:36:20,604 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-05 01:36:21,257 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-05 01:36:21,274 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-05 01:36:24,001 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 13/25 篇新文章
+2026-04-05 01:36:24,003 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-05 01:36:24,003 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-05 01:36:24,004 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-05 01:36:24,005 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-05 01:36:24,030 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-05 01:36:27,993 - INFO - 抓取完成: SCMP Full Text Feed - 18/20 篇新文章
+2026-04-05 01:36:27,995 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-05 01:36:27,995 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-05 01:36:28,036 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-05 01:36:28,193 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-05 01:36:28,195 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-05 01:36:28,195 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-05 01:36:28,866 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-05 01:36:28,867 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-05 01:36:28,880 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-05 01:36:29,126 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-05 01:36:29,146 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-05 01:36:29,293 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-05 01:36:29,294 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-05 01:36:29,294 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-05 01:36:29,295 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-05 01:36:29,295 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-05 01:36:29,839 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-05 01:36:30,026 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-05 01:36:49,375 - INFO - 抓取完成: 路透社最新报道 Lite - 83/300 篇新文章
+2026-04-05 01:36:49,376 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-05 01:36:49,380 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-05 01:36:49,562 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-05 01:36:49,841 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-05 01:36:49,888 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-05 01:36:50,125 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-05 01:36:50,125 - INFO - 全部抓取完成: 13/13 成功, 152 篇新文章
+2026-04-05 01:36:50,125 - INFO - 抓取完成: 13 个源, 152 篇新文章, 耗时 40.6 秒
+2026-04-05 04:23:37,862 - INFO - 开始执行 LLM 处理任务
+2026-04-05 04:37:21,083 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 823.2 秒
+2026-04-05 09:39:45,544 - INFO - 开始执行抓取任务
+2026-04-05 09:39:45,600 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-05 09:39:45,602 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-05 09:39:45,602 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-05 09:39:45,774 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-05 09:39:45,775 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-05 09:39:45,776 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-05 09:39:45,776 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-05 09:39:46,372 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-05 09:39:46,404 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-05 09:39:46,607 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-05 09:39:46,609 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-05 09:39:46,609 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-05 09:39:46,610 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-05 09:39:46,640 - INFO - 解析完成: BBC News - 36 篇文章
+2026-04-05 09:39:50,924 - INFO - 抓取完成: 未知标题 - 21/36 篇新文章
+2026-04-05 09:39:50,925 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-05 09:39:50,926 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-05 09:39:51,565 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-05 09:39:52,204 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-05 09:39:54,165 - INFO - 抓取完成: AP News Latest - 9/25 篇新文章
+2026-04-05 09:39:54,166 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-05 09:39:54,166 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-05 09:39:54,167 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-05 09:39:54,168 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-05 09:39:54,221 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-05 09:39:56,231 - INFO - 抓取完成: Bloomberg Latest - 8/20 篇新文章
+2026-04-05 09:39:56,269 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-05 09:39:57,073 - INFO - 抓取完成: Politico Latest News - 3/20 篇新文章
+2026-04-05 09:39:57,075 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-05 09:39:57,075 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-05 09:39:57,076 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-05 09:39:57,076 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-05 09:39:57,639 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-05 09:39:57,656 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-05 09:40:00,781 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 16/25 篇新文章
+2026-04-05 09:40:00,783 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-05 09:40:00,783 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-05 09:40:00,784 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-05 09:40:00,785 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-05 09:40:00,810 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-05 09:40:02,681 - INFO - 抓取完成: SCMP Full Text Feed - 8/20 篇新文章
+2026-04-05 09:40:02,683 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-05 09:40:02,683 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-05 09:40:02,724 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-05 09:40:02,890 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-05 09:40:02,890 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-05 09:40:02,893 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-05 09:40:02,893 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-05 09:40:02,942 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-05 09:40:03,098 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-05 09:40:03,099 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-05 09:40:03,100 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-05 09:40:03,597 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-05 09:40:03,611 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-05 09:40:03,806 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-05 09:40:03,808 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-05 09:40:03,808 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-05 09:40:03,809 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-05 09:40:03,824 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-05 09:40:03,990 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-05 09:40:03,990 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-05 09:40:04,143 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-05 09:40:18,580 - INFO - 抓取完成: 路透社最新报道 Lite - 65/300 篇新文章
+2026-04-05 09:40:18,974 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-05 09:40:19,177 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-05 09:40:19,488 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-05 09:40:19,488 - INFO - 全部抓取完成: 13/13 成功, 130 篇新文章
+2026-04-05 09:40:19,488 - INFO - 抓取完成: 13 个源, 130 篇新文章, 耗时 33.9 秒
+2026-04-05 10:13:02,013 - INFO - 开始执行 LLM 处理任务
+2026-04-05 10:27:02,151 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 840.1 秒
+2026-04-05 16:02:17,229 - INFO - 开始执行 LLM 处理任务
+2026-04-05 16:17:31,383 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 914.2 秒
+2026-04-05 17:43:20,957 - INFO - 开始执行抓取任务
+2026-04-05 17:43:21,011 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-05 17:43:21,023 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-05 17:43:21,024 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-05 17:43:21,237 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-05 17:43:21,237 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-05 17:43:21,238 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-05 17:43:21,238 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-05 17:43:22,168 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-05 17:43:22,207 - INFO - 解析完成: BBC News - 34 篇文章
+2026-04-05 17:43:24,280 - INFO - 抓取完成: 未知标题 - 9/34 篇新文章
+2026-04-05 17:43:24,282 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-05 17:43:24,282 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-05 17:43:24,283 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-05 17:43:24,308 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-05 17:43:24,480 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-05 17:43:24,482 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-05 17:43:24,483 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-05 17:43:24,977 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-05 17:43:25,817 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-05 17:43:28,030 - INFO - 抓取完成: AP News Latest - 10/25 篇新文章
+2026-04-05 17:43:28,031 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-05 17:43:28,032 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-05 17:43:28,035 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-05 17:43:28,036 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-05 17:43:28,070 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-05 17:43:30,513 - INFO - 抓取完成: Bloomberg Latest - 11/20 篇新文章
+2026-04-05 17:43:30,515 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-05 17:43:30,515 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-05 17:43:30,556 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-05 17:43:30,730 - INFO - 抓取完成: Politico Latest News - 0/20 篇新文章
+2026-04-05 17:43:30,731 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-05 17:43:30,731 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-05 17:43:31,185 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-05 17:43:31,201 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-05 17:43:33,938 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 13/25 篇新文章
+2026-04-05 17:43:33,940 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-05 17:43:33,940 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-05 17:43:33,941 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-05 17:43:33,941 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-05 17:43:33,979 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-05 17:43:38,354 - INFO - 抓取完成: SCMP Full Text Feed - 20/20 篇新文章
+2026-04-05 17:43:38,357 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-05 17:43:38,357 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-05 17:43:38,398 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-05 17:43:38,613 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-05 17:43:38,613 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-05 17:43:38,615 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-05 17:43:38,615 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-05 17:43:38,661 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-05 17:43:38,863 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-05 17:43:38,865 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-05 17:43:38,865 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-05 17:43:39,266 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-05 17:43:39,279 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-05 17:43:39,487 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-05 17:43:39,488 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-05 17:43:39,489 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-05 17:43:39,489 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-05 17:43:39,511 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-05 17:43:39,688 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-05 17:43:39,689 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-05 17:43:39,848 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-05 17:43:51,862 - INFO - 抓取完成: 路透社最新报道 Lite - 52/300 篇新文章
+2026-04-05 17:43:52,581 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-05 17:43:55,010 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-05 17:43:55,237 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-05 17:43:55,237 - INFO - 全部抓取完成: 13/13 成功, 115 篇新文章
+2026-04-05 17:43:55,237 - INFO - 抓取完成: 13 个源, 115 篇新文章, 耗时 34.3 秒
+2026-04-05 21:53:09,513 - INFO - 开始执行 LLM 处理任务
+2026-04-05 22:07:41,138 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 871.6 秒
+2026-04-06 01:46:41,615 - INFO - 开始执行抓取任务
+2026-04-06 01:46:41,678 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-06 01:46:41,682 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-06 01:46:41,682 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-06 01:46:41,923 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-06 01:46:41,923 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-06 01:46:41,924 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-06 01:46:41,924 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-06 01:46:42,452 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-06 01:46:42,498 - INFO - 解析完成: BBC News - 24 篇文章
+2026-04-06 01:46:44,893 - INFO - 抓取完成: 未知标题 - 11/24 篇新文章
+2026-04-06 01:46:44,895 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-06 01:46:44,895 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-06 01:46:45,493 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-06 01:46:45,515 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-06 01:46:45,693 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-06 01:46:45,695 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-06 01:46:45,695 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-06 01:46:45,696 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-06 01:46:46,811 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-06 01:46:46,907 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-06 01:46:49,118 - INFO - 抓取完成: AP News Latest - 10/25 篇新文章
+2026-04-06 01:46:49,120 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-06 01:46:49,120 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-06 01:46:49,121 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-06 01:46:49,156 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-06 01:46:52,634 - INFO - 抓取完成: Bloomberg Latest - 16/20 篇新文章
+2026-04-06 01:46:52,637 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-06 01:46:52,637 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-06 01:46:52,676 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-06 01:46:55,376 - INFO - 抓取完成: Politico Latest News - 13/20 篇新文章
+2026-04-06 01:46:55,378 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-06 01:46:55,378 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-06 01:46:55,608 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-06 01:46:55,625 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-06 01:47:00,575 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 24/25 篇新文章
+2026-04-06 01:47:00,577 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-06 01:47:00,577 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-06 01:47:00,580 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-06 01:47:00,619 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-06 01:47:00,783 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-06 01:47:00,785 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-06 01:47:00,785 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-06 01:47:01,402 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-06 01:47:01,440 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-06 01:47:01,609 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-06 01:47:01,611 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-06 01:47:01,611 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-06 01:47:01,613 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-06 01:47:01,644 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-06 01:47:05,900 - INFO - 抓取完成: SCMP Full Text Feed - 18/20 篇新文章
+2026-04-06 01:47:05,902 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-06 01:47:05,902 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-06 01:47:05,904 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-06 01:47:05,918 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-06 01:47:06,092 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-06 01:47:06,094 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-06 01:47:06,094 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-06 01:47:06,577 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-06 01:47:06,671 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-06 01:47:06,879 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-06 01:47:07,142 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-06 01:47:07,142 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-06 01:47:07,321 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-06 01:47:26,365 - INFO - 抓取完成: 路透社最新报道 Lite - 73/300 篇新文章
+2026-04-06 01:47:26,423 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-06 01:47:26,640 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-06 01:47:26,640 - INFO - 全部抓取完成: 13/13 成功, 165 篇新文章
+2026-04-06 01:47:26,641 - INFO - 抓取完成: 13 个源, 165 篇新文章, 耗时 45.0 秒
+2026-04-06 03:43:26,342 - INFO - 开始执行 LLM 处理任务
+2026-04-06 03:56:45,620 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 799.3 秒
+2026-04-06 09:31:55,241 - INFO - 开始执行 LLM 处理任务
+2026-04-06 09:47:35,469 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 940.2 秒
+2026-04-06 09:50:17,902 - INFO - 开始执行抓取任务
+2026-04-06 09:50:17,933 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-06 09:50:17,939 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-06 09:50:17,940 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-06 09:50:18,149 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-06 09:50:18,150 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-06 09:50:18,150 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-06 09:50:18,151 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-06 09:50:18,679 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-06 09:50:18,714 - INFO - 解析完成: BBC News - 34 篇文章
+2026-04-06 09:50:23,339 - INFO - 抓取完成: 未知标题 - 21/34 篇新文章
+2026-04-06 09:50:23,341 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-06 09:50:23,341 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-06 09:50:23,342 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-06 09:50:23,368 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-06 09:50:23,539 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-06 09:50:23,541 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-06 09:50:23,541 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-06 09:50:24,342 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-06 09:50:24,862 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-06 09:50:24,870 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-06 09:50:25,052 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-06 09:50:27,156 - INFO - 抓取完成: AP News Latest - 10/25 篇新文章
+2026-04-06 09:50:27,157 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-06 09:50:27,157 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-06 09:50:27,195 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-06 09:50:29,239 - INFO - 抓取完成: Bloomberg Latest - 9/20 篇新文章
+2026-04-06 09:50:29,241 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-06 09:50:29,241 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-06 09:50:29,276 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-06 09:50:30,239 - INFO - 抓取完成: Politico Latest News - 4/20 篇新文章
+2026-04-06 09:50:30,240 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-06 09:50:30,241 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-06 09:50:30,601 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-06 09:50:30,617 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-06 09:50:34,280 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 18/25 篇新文章
+2026-04-06 09:50:34,281 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-06 09:50:34,282 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-06 09:50:34,282 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-06 09:50:34,284 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-06 09:50:34,312 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-06 09:50:37,171 - INFO - 抓取完成: SCMP Full Text Feed - 13/20 篇新文章
+2026-04-06 09:50:37,173 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-06 09:50:37,173 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-06 09:50:37,212 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-06 09:50:37,480 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-06 09:50:37,482 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-06 09:50:37,482 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-06 09:50:38,098 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-06 09:50:38,114 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-06 09:50:38,371 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-06 09:50:38,373 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-06 09:50:38,373 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-06 09:50:38,374 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-06 09:50:38,398 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-06 09:50:38,571 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-06 09:50:38,574 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-06 09:50:38,574 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-06 09:50:38,952 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-06 09:50:39,185 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-06 09:50:39,413 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-06 09:50:39,414 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-06 09:50:39,415 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-06 09:50:39,569 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-06 09:50:56,795 - INFO - 抓取完成: 路透社最新报道 Lite - 72/300 篇新文章
+2026-04-06 09:50:56,853 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-06 09:50:57,111 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-06 09:50:57,112 - INFO - 全部抓取完成: 13/13 成功, 147 篇新文章
+2026-04-06 09:50:57,112 - INFO - 抓取完成: 13 个源, 147 篇新文章, 耗时 39.2 秒
+2026-04-06 15:23:22,356 - INFO - 开始执行 LLM 处理任务
+2026-04-06 15:37:18,335 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 836.0 秒
+2026-04-06 17:53:51,377 - INFO - 开始执行抓取任务
+2026-04-06 17:53:51,975 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-06 17:53:51,982 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-06 17:53:51,983 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-06 17:53:52,241 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-06 17:53:52,242 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-06 17:53:52,242 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-06 17:53:52,242 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-06 17:53:52,717 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-06 17:53:52,749 - INFO - 解析完成: BBC News - 32 篇文章
+2026-04-06 17:53:55,570 - INFO - 抓取完成: 未知标题 - 12/32 篇新文章
+2026-04-06 17:53:55,572 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-06 17:53:55,572 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-06 17:53:55,573 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-06 17:53:55,600 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-06 17:53:55,770 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-06 17:53:55,772 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-06 17:53:55,772 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-06 17:53:56,482 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-06 17:53:57,406 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-06 17:53:59,103 - INFO - 抓取完成: AP News Latest - 7/25 篇新文章
+2026-04-06 17:53:59,104 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-06 17:53:59,105 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-06 17:53:59,106 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-06 17:53:59,107 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-06 17:53:59,137 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-06 17:54:03,461 - INFO - 抓取完成: Bloomberg Latest - 20/20 篇新文章
+2026-04-06 17:54:03,463 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-06 17:54:03,463 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-06 17:54:03,502 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-06 17:54:04,286 - INFO - 抓取完成: Politico Latest News - 3/20 篇新文章
+2026-04-06 17:54:04,288 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-06 17:54:04,288 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-06 17:54:04,751 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-06 17:54:04,765 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-06 17:54:07,236 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 12/25 篇新文章
+2026-04-06 17:54:07,237 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-06 17:54:07,238 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-06 17:54:07,239 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-06 17:54:07,240 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-06 17:54:07,277 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-06 17:54:11,885 - INFO - 抓取完成: SCMP Full Text Feed - 20/20 篇新文章
+2026-04-06 17:54:11,887 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-06 17:54:11,887 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-06 17:54:11,922 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-06 17:54:12,077 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-06 17:54:12,079 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-06 17:54:12,079 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-06 17:54:12,750 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-06 17:54:12,765 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-06 17:54:12,910 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-06 17:54:12,912 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-06 17:54:12,912 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-06 17:54:12,914 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-06 17:54:12,937 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-06 17:54:13,102 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-06 17:54:13,104 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-06 17:54:13,104 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-06 17:54:13,458 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-06 17:54:13,776 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-06 17:54:14,035 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-06 17:54:14,036 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-06 17:54:14,036 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-06 17:54:14,190 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-06 17:54:41,575 - INFO - 抓取完成: 路透社最新报道 Lite - 109/300 篇新文章
+2026-04-06 17:54:41,625 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-06 17:54:41,833 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-06 17:54:41,833 - INFO - 全部抓取完成: 13/13 成功, 183 篇新文章
+2026-04-06 17:54:41,834 - INFO - 抓取完成: 13 个源, 183 篇新文章, 耗时 50.5 秒
+2026-04-06 21:13:12,828 - INFO - 开始执行 LLM 处理任务
+2026-04-06 21:27:12,476 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 839.6 秒
+2026-04-07 01:57:34,792 - INFO - 开始执行抓取任务
+2026-04-07 01:57:34,857 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-07 01:57:34,865 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-07 01:57:34,865 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-07 01:57:35,020 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-07 01:57:35,021 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-07 01:57:35,022 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-07 01:57:35,022 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-07 01:57:35,584 - INFO - HTTP Request: GET https://feeds.bbci.co.uk/news/rss.xml "HTTP/1.1 200 OK"
+2026-04-07 01:57:35,610 - INFO - 解析完成: BBC News - 29 篇文章
+2026-04-07 01:57:38,865 - INFO - 抓取完成: 未知标题 - 14/29 篇新文章
+2026-04-07 01:57:38,867 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-07 01:57:38,867 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-07 01:57:38,868 - INFO - HTTP Request: GET https://feedx.net/rss/wsjen.xml "HTTP/1.1 200 OK"
+2026-04-07 01:57:38,897 - INFO - 解析完成: The Wall Street Journal - 2 篇文章
+2026-04-07 01:57:39,071 - INFO - 抓取完成: The Wall Street Journal - 0/2 篇新文章
+2026-04-07 01:57:39,073 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-07 01:57:39,073 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-07 01:57:39,708 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-07 01:57:40,762 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-07 01:57:43,765 - INFO - 抓取完成: AP News Latest - 13/25 篇新文章
+2026-04-07 01:57:43,767 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-07 01:57:43,767 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-07 01:57:43,769 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-07 01:57:43,770 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-07 01:57:43,811 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-07 01:57:48,364 - INFO - 抓取完成: Bloomberg Latest - 20/20 篇新文章
+2026-04-07 01:57:48,366 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-07 01:57:48,366 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-07 01:57:48,406 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-07 01:57:49,297 - INFO - 抓取完成: Politico Latest News - 4/20 篇新文章
+2026-04-07 01:57:49,299 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-07 01:57:49,300 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-07 01:57:49,939 - INFO - HTTP Request: GET https://www.aljazeera.com/xml/rss/all.xml "HTTP/1.1 200 OK"
+2026-04-07 01:57:49,955 - INFO - 解析完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 25 篇文章
+2026-04-07 01:57:53,964 - INFO - 抓取完成: Al Jazeera – Breaking News, World News and Video from Al Jazeera - 20/25 篇新文章
+2026-04-07 01:57:53,965 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-07 01:57:53,966 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-07 01:57:53,967 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-07 01:57:53,968 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-07 01:57:53,996 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-07 01:57:58,213 - INFO - 抓取完成: SCMP Full Text Feed - 19/20 篇新文章
+2026-04-07 01:57:58,215 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-07 01:57:58,215 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-07 01:57:58,252 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-07 01:57:58,430 - INFO - 抓取完成: Politico White-House News - 0/20 篇新文章
+2026-04-07 01:57:58,432 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-07 01:57:58,432 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-07 01:57:59,131 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-07 01:57:59,143 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-07 01:57:59,314 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-07 01:57:59,315 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-07 01:57:59,315 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-07 01:57:59,316 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-07 01:57:59,338 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-07 01:57:59,505 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 0/20 篇新文章
+2026-04-07 01:57:59,507 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-07 01:57:59,507 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-07 01:57:59,796 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-07 01:57:59,899 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-07 01:58:00,208 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-07 01:58:00,530 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-07 01:58:00,532 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-07 01:58:00,705 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-07 01:58:54,918 - INFO - 抓取完成: 路透社最新报道 Lite - 210/300 篇新文章
+2026-04-07 01:58:54,975 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-07 01:58:55,251 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-07 01:58:55,253 - INFO - 全部抓取完成: 13/13 成功, 300 篇新文章
+2026-04-07 01:58:55,254 - INFO - 抓取完成: 13 个源, 300 篇新文章, 耗时 80.5 秒
+2026-04-07 03:03:44,755 - INFO - 开始执行 LLM 处理任务
+2026-04-07 03:17:39,612 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 834.9 秒
+2026-04-07 08:42:47,262 - INFO - 收到停止信号
+2026-04-07 08:42:47,264 - INFO - 定时任务调度器停止

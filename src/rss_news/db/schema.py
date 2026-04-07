@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS feeds (
     title TEXT NOT NULL,
     url TEXT UNIQUE NOT NULL,
     description TEXT DEFAULT '',
+    source_note TEXT DEFAULT '',
     is_active INTEGER DEFAULT 1,
     last_fetched TEXT,
     created_at TEXT NOT NULL
@@ -162,3 +163,37 @@ def verify_schema(conn: sqlite3.Connection) -> bool:
         return False
     
     return True
+
+
+def migrate_add_source_note(conn: sqlite3.Connection) -> bool:
+    """迁移：为 feeds 表添加 source_note 字段
+    
+    检查字段是否存在，不存在则添加。
+    
+    Args:
+        conn: 数据库连接对象
+        
+    Returns:
+        True 如果迁移成功或字段已存在
+    """
+    cursor = conn.cursor()
+    
+    # 检查 source_note 字段是否存在
+    cursor.execute("PRAGMA table_info(feeds)")
+    columns = [row[1] for row in cursor.fetchall()]
+    
+    if 'source_note' not in columns:
+        cursor.execute("ALTER TABLE feeds ADD COLUMN source_note TEXT DEFAULT ''")
+        conn.commit()
+        return True
+    
+    return False
+
+
+def run_migrations(conn: sqlite3.Connection) -> None:
+    """运行所有必要的数据库迁移
+    
+    Args:
+        conn: 数据库连接对象
+    """
+    migrate_add_source_note(conn)
