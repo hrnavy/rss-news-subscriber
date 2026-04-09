@@ -870,3 +870,117 @@
 2026-04-07 03:17:39,612 - INFO - LLM 处理完成: 100/100 篇文章, 耗时 834.9 秒
 2026-04-07 08:42:47,262 - INFO - 收到停止信号
 2026-04-07 08:42:47,264 - INFO - 定时任务调度器停止
+2026-04-09 10:45:07,196 - INFO - 开始执行抓取任务
+2026-04-09 10:45:07,218 - INFO - 开始抓取 13 个订阅源，并发数: 3
+2026-04-09 10:45:07,219 - INFO - 开始抓取订阅源: 未知标题 (https://feeds.bbci.co.uk/news/rss.xml)
+2026-04-09 10:45:07,219 - INFO - 开始获取 RSS: https://feeds.bbci.co.uk/news/rss.xml
+2026-04-09 10:45:09,127 - INFO - 开始抓取订阅源: The Wall Street Journal (https://feedx.net/rss/wsjen.xml)
+2026-04-09 10:45:09,136 - INFO - 开始获取 RSS: https://feedx.net/rss/wsjen.xml
+2026-04-09 10:45:09,137 - INFO - 开始抓取订阅源: AP News Latest (https://quanwenrss.com/apnews)
+2026-04-09 10:45:09,137 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews
+2026-04-09 10:45:10,175 - INFO - HTTP Request: GET https://quanwenrss.com/apnews "HTTP/1.1 200 OK"
+2026-04-09 10:45:11,207 - INFO - 解析完成: AP News Latest - 25 篇文章
+2026-04-09 10:45:17,136 - INFO - 抓取完成: AP News Latest - 21/25 篇新文章
+2026-04-09 10:45:17,139 - INFO - 开始抓取订阅源: Bloomberg Latest (https://quanwenrss.com/bloomberg)
+2026-04-09 10:45:17,139 - INFO - 开始获取 RSS: https://quanwenrss.com/bloomberg
+2026-04-09 10:45:17,975 - INFO - HTTP Request: GET https://quanwenrss.com/bloomberg "HTTP/1.1 200 OK"
+2026-04-09 10:45:18,663 - INFO - 解析完成: Bloomberg Latest - 20 篇文章
+2026-04-09 10:45:23,912 - INFO - 抓取完成: Bloomberg Latest - 20/20 篇新文章
+2026-04-09 10:45:23,914 - INFO - 开始抓取订阅源: Politico Latest News (https://quanwenrss.com/politico)
+2026-04-09 10:45:23,914 - INFO - 开始获取 RSS: https://quanwenrss.com/politico
+2026-04-09 10:45:24,730 - INFO - HTTP Request: GET https://quanwenrss.com/politico "HTTP/1.1 200 OK"
+2026-04-09 10:45:25,166 - INFO - 解析完成: Politico Latest News - 20 篇文章
+2026-04-09 10:45:30,018 - INFO - 抓取完成: Politico Latest News - 20/20 篇新文章
+2026-04-09 10:45:30,020 - INFO - 开始抓取订阅源: Al Jazeera – Breaking News, World News and Video from Al Jazeera (https://www.aljazeera.com/xml/rss/all.xml)
+2026-04-09 10:45:30,020 - INFO - 开始获取 RSS: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-09 10:45:30,178 - WARNING - 网络错误 (尝试 1/3): All connection attempts failed
+2026-04-09 10:45:30,224 - WARNING - 网络错误 (尝试 1/3): All connection attempts failed
+2026-04-09 10:45:51,059 - WARNING - 网络错误 (尝试 1/3): All connection attempts failed
+2026-04-09 10:45:51,214 - WARNING - 网络错误 (尝试 2/3): All connection attempts failed
+2026-04-09 10:45:51,260 - WARNING - 网络错误 (尝试 2/3): All connection attempts failed
+2026-04-09 10:46:12,102 - WARNING - 网络错误 (尝试 2/3): All connection attempts failed
+2026-04-09 10:46:12,259 - WARNING - 网络错误 (尝试 3/3): All connection attempts failed
+2026-04-09 10:46:12,259 - ERROR - 抓取失败: 未知标题 - RSS 解析错误: 网络错误: All connection attempts failed
+2026-04-09 10:46:12,260 - INFO - 开始抓取订阅源: Politico White-House News (https://quanwenrss.com/politico/white-house)
+2026-04-09 10:46:12,260 - INFO - 开始获取 RSS: https://quanwenrss.com/politico/white-house
+2026-04-09 10:46:12,307 - WARNING - 网络错误 (尝试 3/3): All connection attempts failed
+2026-04-09 10:46:12,307 - ERROR - 抓取失败: The Wall Street Journal - RSS 解析错误: 网络错误: All connection attempts failed
+2026-04-09 10:46:12,308 - INFO - 开始抓取订阅源: SCMP Full Text Feed (https://quanwenrss.com/scmp)
+2026-04-09 10:46:12,308 - INFO - 开始获取 RSS: https://quanwenrss.com/scmp
+2026-04-09 10:46:13,097 - INFO - HTTP Request: GET https://quanwenrss.com/politico/white-house "HTTP/1.1 200 OK"
+2026-04-09 10:46:13,122 - INFO - HTTP Request: GET https://quanwenrss.com/scmp "HTTP/1.1 200 OK"
+2026-04-09 10:46:13,357 - INFO - 解析完成: SCMP Full Text Feed - 20 篇文章
+2026-04-09 10:46:19,225 - INFO - 抓取完成: SCMP Full Text Feed - 20/20 篇新文章
+2026-04-09 10:46:19,226 - INFO - 开始抓取订阅源: AP News ap-fact-check Latest (https://quanwenrss.com/apnews/ap-fact-check)
+2026-04-09 10:46:19,226 - INFO - 开始获取 RSS: https://quanwenrss.com/apnews/ap-fact-check
+2026-04-09 10:46:19,261 - INFO - 解析完成: Politico White-House News - 20 篇文章
+2026-04-09 10:46:22,091 - INFO - 抓取完成: Politico White-House News - 11/20 篇新文章
+2026-04-09 10:46:22,093 - INFO - 开始抓取订阅源: Morgan Stanley - Ideas and Insights (https://quanwenrss.com/morganstanley/global)
+2026-04-09 10:46:22,093 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/global
+2026-04-09 10:46:22,499 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/global "HTTP/1.1 200 OK"
+2026-04-09 10:46:22,517 - INFO - 解析完成: Morgan Stanley - Ideas and Insights - 20 篇文章
+2026-04-09 10:46:22,990 - INFO - 抓取完成: Morgan Stanley - Ideas and Insights - 1/20 篇新文章
+2026-04-09 10:46:22,992 - INFO - 开始抓取订阅源: 摩根士丹利中国 - 观点与洞察 (https://quanwenrss.com/morganstanley/china)
+2026-04-09 10:46:22,992 - INFO - 开始获取 RSS: https://quanwenrss.com/morganstanley/china
+2026-04-09 10:46:22,993 - INFO - HTTP Request: GET https://quanwenrss.com/apnews/ap-fact-check "HTTP/1.1 200 OK"
+2026-04-09 10:46:23,204 - INFO - HTTP Request: GET https://quanwenrss.com/morganstanley/china "HTTP/1.1 200 OK"
+2026-04-09 10:46:23,217 - INFO - 解析完成: 摩根士丹利中国 - 观点与洞察 - 10 篇文章
+2026-04-09 10:46:23,420 - INFO - 抓取完成: 摩根士丹利中国 - 观点与洞察 - 0/10 篇新文章
+2026-04-09 10:46:23,423 - INFO - 开始抓取订阅源: 路透社最新报道 Lite (https://reutersnew.buzzing.cc/lite/feed.xml)
+2026-04-09 10:46:23,423 - INFO - 开始获取 RSS: https://reutersnew.buzzing.cc/lite/feed.xml
+2026-04-09 10:46:23,473 - INFO - 解析完成: AP News ap-fact-check Latest - 25 篇文章
+2026-04-09 10:46:23,693 - INFO - 抓取完成: AP News ap-fact-check Latest - 0/25 篇新文章
+2026-04-09 10:46:23,694 - INFO - 开始抓取订阅源: 全球突发新闻 Lite (https://breaking.buzzing.cc/lite/feed.xml)
+2026-04-09 10:46:23,694 - INFO - 开始获取 RSS: https://breaking.buzzing.cc/lite/feed.xml
+2026-04-09 10:46:24,407 - INFO - HTTP Request: GET https://reutersnew.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-09 10:46:24,612 - INFO - 解析完成: 路透社最新报道 Lite - 300 篇文章
+2026-04-09 10:47:51,888 - INFO - 抓取完成: 路透社最新报道 Lite - 297/300 篇新文章
+2026-04-09 10:47:51,889 - INFO - HTTP Request: GET https://breaking.buzzing.cc/lite/feed.xml "HTTP/1.1 200 OK"
+2026-04-09 10:47:52,077 - INFO - 解析完成: 全球突发新闻 Lite - 300 篇文章
+2026-04-09 10:47:52,518 - INFO - 抓取完成: 全球突发新闻 Lite - 0/300 篇新文章
+2026-04-09 10:47:52,519 - WARNING - 获取 RSS 超时 (尝试 3/3): https://www.aljazeera.com/xml/rss/all.xml
+2026-04-09 10:47:52,519 - ERROR - 抓取失败: Al Jazeera – Breaking News, World News and Video from Al Jazeera - RSS 解析错误: 获取 RSS 超时: https://www.aljazeera.com/xml/rss/all.xml
+2026-04-09 10:47:52,519 - INFO - 全部抓取完成: 10/13 成功, 390 篇新文章
+2026-04-09 10:47:52,520 - INFO - 抓取完成: 13 个源, 390 篇新文章, 耗时 165.3 秒
+2026-04-09 10:48:22,017 - INFO - 开始执行 Wiki 构建任务
+2026-04-09 10:48:22,046 - INFO - 已加载 32 条预定义映射
+2026-04-09 10:49:50,368 - INFO - 批次 1/5 完成
+2026-04-09 10:51:03,056 - INFO - 批次 2/5 完成
+2026-04-09 10:53:21,006 - ERROR - JSON 解析失败: Expecting value: line 101 column 22 (char 2825), 响应内容: {
+  "people": [
+    {
+      "name": "Donald Trump",
+      "description": "美国总统，对北约、伊朗局势及媒体发表强硬言论并威胁记者，同时与盟友马克·吕特会谈。",
+      "article_ids": [2873, 2898],
+      "related_people": ["Mark Rutte", "Kash Pa
+2026-04-09 10:53:21,006 - INFO - 批次 3/5 完成
+2026-04-09 10:55:11,824 - INFO - 批次 4/5 完成
+2026-04-09 10:55:35,397 - INFO - 批次 5/5 完成
+2026-04-09 10:57:37,045 - INFO - 人物页面构建完成: 48 个
+2026-04-09 10:59:53,430 - INFO - 批次 1/4 完成
+2026-04-09 11:01:18,642 - INFO - 批次 2/4 完成
+2026-04-09 11:03:30,702 - INFO - 批次 3/4 完成
+2026-04-09 11:04:27,718 - INFO - 批次 4/4 完成
+2026-04-09 11:08:33,970 - INFO - 政治实体页面构建完成: 71 个
+2026-04-09 11:08:33,972 - INFO - Wiki 构建完成: 人物 48 个, 政治实体 71 个, 耗时 1212.0 秒
+2026-04-09 11:08:49,656 - INFO - 开始执行健康检查任务
+2026-04-09 11:08:49,657 - INFO - 运行检查: names
+2026-04-09 11:08:51,011 - INFO - 已加载 32 条预定义映射
+2026-04-09 11:09:08,864 - INFO - 已添加映射: Leo XIV -> Pope Leo XIV
+2026-04-09 11:09:08,865 - INFO - 运行检查: political_entities
+2026-04-09 11:09:09,573 - INFO - 运行检查: timeline
+2026-04-09 11:16:56,550 - INFO - 运行检查: source
+2026-04-09 11:16:57,468 - INFO - 运行检查: non_person
+2026-04-09 11:16:57,507 - ERROR - 健康检查任务失败: 'FullHealthReport' object has no attribute 'status'
+2026-04-09 11:19:00,122 - INFO - 开始执行健康检查任务
+2026-04-09 11:19:00,123 - INFO - 运行检查: names
+2026-04-09 11:19:01,220 - INFO - 已加载 32 条预定义映射
+2026-04-09 11:19:01,254 - INFO - 跳过已确认的映射: Leo XIV -> Pope Leo XIV
+2026-04-09 11:19:01,255 - INFO - 运行检查: political_entities
+2026-04-09 11:19:02,043 - INFO - 运行检查: timeline
+2026-04-09 11:26:40,903 - INFO - 运行检查: source
+2026-04-09 11:26:42,031 - INFO - 运行检查: non_person
+2026-04-09 11:26:42,068 - INFO - 健康检查完成: 状态=warning, 问题数=166, 耗时 461.9 秒
+2026-04-09 11:26:42,068 - WARNING - political_entities: 5 个问题
+2026-04-09 11:26:42,068 - WARNING - timeline: 154 个问题
+2026-04-09 11:26:42,068 - WARNING - non_person: 7 个问题

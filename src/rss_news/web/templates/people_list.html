@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}人物列表 - Wiki Viewer{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">人物列表 <span class="badge bg-secondary">{{ people|length }}</span></h2>
+
+<div class="row">
+    {% for person in people %}
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{{ url_for('wiki.person_detail', name=person.name) }}">{{ person.name }}</a>
+                </h5>
+                <p class="card-text text-muted small">{{ person.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-info">暂无人物数据</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

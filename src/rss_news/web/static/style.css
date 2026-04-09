@@ -1,0 +1,36 @@
+/* Wiki Viewer 自定义样式 */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: none;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.article-content {
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.list-group-item a {
+    text-decoration: none;
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+}

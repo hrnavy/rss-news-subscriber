@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}政治实体列表 - Wiki Viewer{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">政治实体列表 <span class="badge bg-secondary">{{ entities|length }}</span></h2>
+
+{% for type, type_entities in grouped.items() %}
+<div class="mb-4">
+    <h4 class="mb-3">{{ type }} <span class="badge bg-secondary">{{ type_entities|length }}</span></h4>
+    <div class="row">
+        {% for entity in type_entities %}
+        <div class="col-md-3 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <a href="{{ url_for('wiki.entity_detail', name=entity.name) }}">{{ entity.name }}</a>
+                    </h6>
+                    <p class="card-text text-muted small">{{ entity.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="alert alert-info">暂无政治实体数据</div>
+{% endfor %}
+{% endblock %}

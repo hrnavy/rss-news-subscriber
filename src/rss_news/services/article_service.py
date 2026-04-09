@@ -427,6 +427,78 @@ class ArticleService:
             )
             rows = cursor.fetchall()
             return [Article.from_row(row) for row in rows]
+    
+    def search_articles(
+        self,
+        keywords: str,
+        field: str = "title",
+        category: str | None = None,
+        date_from: str | None = None,
+        date_to: str | None = None,
+        limit: int = 50,
+    ) -> list[Article]:
+        """搜索文章
+        
+        支持模糊匹配和多词搜索（AND 关系）。
+        
+        Args:
+            keywords: 搜索关键词（多个词用空格分隔）
+            field: 搜索字段（title/content/all）
+            category: 按分类筛选
+            date_from: 开始日期
+            date_to: 结束日期
+            limit: 返回数量限制
+            
+        Returns:
+            匹配的文章列表
+        """
+        words = keywords.strip().split()
+        if not words:
+            return []
+        
+        conditions = []
+        params = []
+        
+        for word in words:
+            like_pattern = f"%{word}%"
+            if field == "title":
+                conditions.append("title LIKE ?")
+                params.append(like_pattern)
+            elif field == "content":
+                conditions.append("content LIKE ?")
+                params.append(like_pattern)
+            else:
+                conditions.append("(title LIKE ? OR content LIKE ?)")
+                params.extend([like_pattern, like_pattern])
+        
+        where_clause = " AND ".join(conditions)
+        
+        if category:
+            where_clause += " AND category = ?"
+            params.append(category)
+        
+        if date_from:
+            where_clause += " AND DATE(published_at) >= ?"
+            params.append(date_from)
+        
+        if date_to:
+            where_clause += " AND DATE(published_at) <= ?"
+            params.append(date_to)
+        
+        params.append(limit)
+        
+        with get_connection() as conn:
+            cursor = conn.execute(
+                f"""SELECT id, feed_id, title, link, content, summary, category, 
+                          keywords, published_at, created_at
+                   FROM articles 
+                   WHERE {where_clause}
+                   ORDER BY published_at DESC
+                   LIMIT ?""",
+                params
+            )
+            rows = cursor.fetchall()
+            return [Article.from_row(row) for row in rows]
 
 
 # 全局服务实例

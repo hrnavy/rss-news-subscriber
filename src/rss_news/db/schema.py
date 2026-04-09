@@ -68,6 +68,34 @@ CREATE_ARTICLES_PUBLISHED_AT_INDEX: str = """
 CREATE INDEX IF NOT EXISTS idx_articles_published_at ON articles(published_at);
 """
 
+# 人名映射表创建 SQL
+CREATE_NAME_MAPPINGS_TABLE: str = """
+CREATE TABLE IF NOT EXISTS name_mappings (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    primary_name TEXT NOT NULL,
+    variant_name TEXT NOT NULL,
+    variant_type TEXT NOT NULL,
+    confidence REAL NOT NULL,
+    source TEXT NOT NULL,
+    evidence TEXT,
+    article_ids TEXT,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    verified INTEGER DEFAULT 0,
+    UNIQUE(variant_name, primary_name)
+);
+"""
+
+# 变体名称索引（加速查询变体对应的主名称）
+CREATE_NAME_MAPPINGS_VARIANT_INDEX: str = """
+CREATE INDEX IF NOT EXISTS idx_name_mappings_variant ON name_mappings(variant_name);
+"""
+
+# 主名称索引（加速查询主名称的所有变体）
+CREATE_NAME_MAPPINGS_PRIMARY_INDEX: str = """
+CREATE INDEX IF NOT EXISTS idx_name_mappings_primary ON name_mappings(primary_name);
+"""
+
 
 def get_all_create_statements() -> List[str]:
     """获取所有创建表和索引的 SQL 语句
@@ -84,6 +112,9 @@ def get_all_create_statements() -> List[str]:
         CREATE_ARTICLES_FEED_ID_INDEX,
         CREATE_ARTICLES_CATEGORY_INDEX,
         CREATE_ARTICLES_PUBLISHED_AT_INDEX,
+        CREATE_NAME_MAPPINGS_TABLE,
+        CREATE_NAME_MAPPINGS_VARIANT_INDEX,
+        CREATE_NAME_MAPPINGS_PRIMARY_INDEX,
     ]
 
 
@@ -162,6 +193,13 @@ def verify_schema(conn: sqlite3.Connection) -> bool:
     if not cursor.fetchone():
         return False
     
+    # 检查 name_mappings 表
+    cursor.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name='name_mappings'"
+    )
+    if not cursor.fetchone():
+        return False
+    
     return True
 
 
@@ -190,6 +228,31 @@ def migrate_add_source_note(conn: sqlite3.Connection) -> bool:
     return False
 
 
+def migrate_add_wiki_processed(conn: sqlite3.Connection) -> bool:
+    """迁移：为 articles 表添加 wiki_processed 字段
+    
+    检查字段是否存在，不存在则添加。
+    
+    Args:
+        conn: 数据库连接对象
+        
+    Returns:
+        True 如果迁移成功或字段已存在
+    """
+    cursor = conn.cursor()
+    
+    # 检查 wiki_processed 字段是否存在
+    cursor.execute("PRAGMA table_info(articles)")
+    columns = [row[1] for row in cursor.fetchall()]
+    
+    if 'wiki_processed' not in columns:
+        cursor.execute("ALTER TABLE articles ADD COLUMN wiki_processed INTEGER DEFAULT 0")
+        conn.commit()
+        return True
+    
+    return False
+
+
 def run_migrations(conn: sqlite3.Connection) -> None:
     """运行所有必要的数据库迁移
     
@@ -197,3 +260,34 @@ def run_migrations(conn: sqlite3.Connection) -> None:
         conn: 数据库连接对象
     """
     migrate_add_source_note(conn)
+    migrate_add_wiki_processed(conn)
+    migrate_create_name_mappings_table(conn)
+
+
+def migrate_create_name_mappings_table(conn: sqlite3.Connection) -> bool:
+    """迁移：创建 name_mappings 表
+    
+    检查表是否存在，不存在则创建。
+    
+    Args:
+        conn: 数据库连接对象
+        
+    Returns:
+        True 如果迁移成功或表已存在
+    """
+    cursor = conn.cursor()
+    
+    # 检查 name_mappings 表是否存在
+    cursor.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name='name_mappings'"
+    )
+    if cursor.fetchone():
+        return False
+    
+    # 创建表和索引
+    cursor.execute(CREATE_NAME_MAPPINGS_TABLE)
+    cursor.execute(CREATE_NAME_MAPPINGS_VARIANT_INDEX)
+    cursor.execute(CREATE_NAME_MAPPINGS_PRIMARY_INDEX)
+    conn.commit()
+    
+    return True

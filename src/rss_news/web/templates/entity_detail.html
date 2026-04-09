@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}{{ entity.name }} - Wiki Viewer{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url_for('wiki.index') }}">首页</a></li>
+        <li class="breadcrumb-item"><a href="{{ url_for('wiki.entity_list') }}">政治实体</a></li>
+        <li class="breadcrumb-item active">{{ entity.name }}</li>
+    </ol>
+</nav>
+
+<h2 class="mb-3">{{ entity.name }}</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        {% if entity.entity_type %}
+        <div class="card mb-4">
+            <div class="card-header">类型</div>
+            <div class="card-body">
+                <span class="badge bg-primary">{{ entity.entity_type }}</span>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="card mb-4">
+            <div class="card-header">简介</div>
+            <div class="card-body">
+                <p>{{ entity.description }}</p>
+            </div>
+        </div>
+
+        {% if entity.news %}
+        <div class="card mb-4">
+            <div class="card-header">相关新闻</div>
+            <ul class="list-group list-group-flush">
+                {% for item in entity.news %}
+                <li class="list-group-item">
+                    <a href="{{ url_for('wiki.article_detail', article_id=item.article_id) }}">{{ item.title }}</a>
+                    {% if item.source %}<span class="badge bg-secondary">{{ item.source }}</span>{% endif %}
+                    <small class="text-muted">{{ item.date }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if entity.timeline %}
+        <div class="card mb-4">
+            <div class="card-header">时间线</div>
+            <ul class="list-group list-group-flush">
+                {% for item in entity.timeline %}
+                <li class="list-group-item">
+                    <strong>{{ item.date }}</strong>: {{ item.content }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if entity.generated_at %}
+<small class="text-muted">生成时间: {{ entity.generated_at }}</small>
+{% endif %}
+{% endblock %}

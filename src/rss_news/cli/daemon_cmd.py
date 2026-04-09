@@ -26,7 +26,7 @@ def daemon(
 ):
     """后台服务管理
     
-    启动定时任务服务，自动执行 fetch 和 LLM 处理。
+    启动定时任务服务，自动执行 fetch、Wiki 构建和健康检查。
     
     示例:
         rss-news daemon          # 启动服务（前台运行）
@@ -52,7 +52,8 @@ def start_daemon():
     
     console.print("[bold blue]启动后台服务...[/bold blue]")
     console.print(f"  抓取间隔: {config.daemon.fetch_interval} 秒")
-    console.print(f"  LLM 间隔: {config.daemon.llm_interval} 秒")
+    console.print(f"  Wiki 间隔: {config.daemon.wiki_interval} 秒")
+    console.print(f"  健康检查间隔: {config.daemon.health_check_interval} 秒")
     console.print(f"  日志文件: {config.daemon.log_file}")
     console.print("\n[dim]按 Ctrl+C 停止服务[/dim]\n")
     
@@ -96,7 +97,8 @@ def status_daemon():
     
     table.add_row("配置状态", "启用" if config.daemon.enabled else "禁用")
     table.add_row("抓取间隔", f"{config.daemon.fetch_interval} 秒")
-    table.add_row("LLM 间隔", f"{config.daemon.llm_interval} 秒")
+    table.add_row("Wiki 间隔", f"{config.daemon.wiki_interval} 秒")
+    table.add_row("健康检查间隔", f"{config.daemon.health_check_interval} 秒")
     table.add_row("日志文件", config.daemon.log_file)
     
     try:
@@ -222,15 +224,16 @@ def view_logs(
 def run_once(
     task: str = typer.Argument(
         "all",
-        help="要执行的任务: fetch, llm, all"
+        help="要执行的任务: fetch, wiki, health-check, all"
     ),
 ):
     """立即执行一次任务
     
     示例:
-        rss-news daemon run fetch   # 只执行抓取
-        rss-news daemon run llm     # 只执行 LLM 处理
-        rss-news daemon run all     # 执行所有任务
+        rss-news daemon run fetch           # 只执行抓取
+        rss-news daemon run wiki            # 只执行 Wiki 构建
+        rss-news daemon run health-check    # 只执行健康检查
+        rss-news daemon run all             # 执行所有任务
     """
     import asyncio
     from rss_news.services.scheduler import TaskScheduler
@@ -243,9 +246,13 @@ def run_once(
             console.print("[bold blue]执行抓取任务...[/bold blue]")
             await scheduler._run_fetch_task()
         
-        if task in ("llm", "all"):
-            console.print("[bold blue]执行 LLM 处理任务...[/bold blue]")
-            await scheduler._run_llm_task()
+        if task in ("wiki", "all"):
+            console.print("[bold blue]执行 Wiki 构建任务...[/bold blue]")
+            await scheduler._run_wiki_task()
+        
+        if task in ("health-check", "all"):
+            console.print("[bold blue]执行健康检查任务...[/bold blue]")
+            await scheduler._run_health_check_task()
     
     try:
         asyncio.run(run_tasks())

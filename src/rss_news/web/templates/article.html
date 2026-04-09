@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - Wiki Viewer{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url_for('wiki.index') }}">首页</a></li>
+        <li class="breadcrumb-item active">新闻详情</li>
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title mb-3">{{ article.title }}</h2>
+        
+        <div class="mb-3">
+            {% if article.source %}
+            <span class="badge bg-primary me-2">{{ article.source }}</span>
+            {% endif %}
+            <small class="text-muted">{{ article.published_at }}</small>
+        </div>
+
+        {% if article.summary %}
+        <div class="alert alert-info">
+            <strong>摘要:</strong> {{ article.summary }}
+        </div>
+        {% endif %}
+
+        <div class="article-content">
+            {{ article.content.replace('\n', '<br>') | safe }}
+        </div>
+
+        {% if article.link %}
+        <hr>
+        <a href="{{ article.link }}" target="_blank" class="btn btn-outline-primary">查看原文</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

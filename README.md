@@ -128,6 +128,31 @@ uv run rss-news play --no-summary
 - **N** - 跳到下一条
 - **Q** - 退出播放器
 
+### 数据库查询
+
+```bash
+# 搜索文章（默认搜索标题）
+uv run rss-news db search "特朗普"
+
+# 搜索正文
+uv run rss-news db search "人工智能" --field content
+
+# 搜索所有字段
+uv run rss-news db search "伊朗" --field all
+
+# 多词搜索（AND 关系）
+uv run rss-news db search "特朗普 伊朗"
+
+# 按分类筛选
+uv run rss-news db search "特朗普" --category 政治
+
+# 按时间范围
+uv run rss-news db search "特朗普" --from 2026-04-01 --to 2026-04-07
+
+# 查看数据库统计
+uv run rss-news db stats
+```
+
 ### 定时任务（后台服务）
 
 ```bash
@@ -161,6 +186,38 @@ daemon:
   llm_interval: 7200    # LLM处理间隔（秒）
   log_file: logs/daemon.log
 ```
+
+### Wiki 知识库
+
+通过 LLM 从新闻中提取人物和事件，生成结构化的 Markdown 知识库。
+
+```bash
+# 初始化 Wiki
+uv run rss-news wiki init
+
+# 构建人物页面
+uv run rss-news wiki build-people
+
+# 构建事件页面
+uv run rss-news wiki build-events
+
+# 增量更新
+uv run rss-news wiki update
+
+# 查看 Wiki 状态
+uv run rss-news wiki status
+```
+
+Wiki 目录结构：
+```
+wiki/
+├── people/          # 人物页面
+├── events/          # 事件页面
+├── summaries/       # 摘要页面
+└── config.yaml      # Wiki 配置
+```
+
+每个页面都会标注原始新闻来源作为引用。
 
 ## 项目结构
 

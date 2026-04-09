@@ -2,6 +2,12 @@
 
 from rss_news.models.feed import Feed, FeedCreate, FeedUpdate
 from rss_news.models.article import Article, ArticleCreate, ArticleLLMUpdate
+from rss_news.models.name_mapping import (
+    NameMapping,
+    VariantType,
+    MappingSource,
+    PREDEFINED_MAPPINGS,
+)
 
 __all__ = [
     "Feed",
@@ -10,4 +16,8 @@ __all__ = [
     "Article",
     "ArticleCreate",
     "ArticleLLMUpdate",
+    "NameMapping",
+    "VariantType",
+    "MappingSource",
+    "PREDEFINED_MAPPINGS",
 ]

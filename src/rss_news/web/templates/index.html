@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}首页 - Wiki Viewer{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card text-center">
+            <div class="card-body">
+                <h1 class="display-4">{{ stats.people_count }}</h1>
+                <p class="card-text">人物</p>
+                <a href="{{ url_for('wiki.people_list') }}" class="btn btn-primary">查看全部</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-center">
+            <div class="card-body">
+                <h1 class="display-4">{{ stats.entities_count }}</h1>
+                <p class="card-text">政治实体</p>
+                <a href="{{ url_for('wiki.entity_list') }}" class="btn btn-primary">查看全部</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>最近人物</h3>
+        <ul class="list-group">
+            {% for person in recent_people %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{{ url_for('wiki.person_detail', name=person.name) }}">{{ person.name }}</a>
+                <small class="text-muted">{{ person.description[:50] }}...</small>
+            </li>
+            {% else %}
+            <li class="list-group-item text-muted">暂无人物</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h3>最近政治实体</h3>
+        <ul class="list-group">
+            {% for entity in recent_entities %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{{ url_for('wiki.entity_detail', name=entity.name) }}">{{ entity.name }}</a>
+                <span class="badge bg-secondary">{{ entity.type }}</span>
+            </li>
+            {% else %}
+            <li class="list-group-item text-muted">暂无政治实体</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

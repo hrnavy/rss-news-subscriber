@@ -14,6 +14,7 @@ from .feed_validator import FeedValidator, ValidationResult, get_validator
 from .fetcher import FeedFetcher, FetchResult, close_fetcher, get_fetcher
 from .keyword_extractor import KeywordExtractor, get_keyword_extractor
 from .llm_client import LLMClient, get_llm_client
+from .name_mapping_service import NameMappingService
 from .rss_parser import (
     ParsedArticle,
     ParsedFeed,
@@ -71,6 +72,8 @@ __all__ = [
     "NEWS_CATEGORIES",
     "KeywordExtractor",
     "get_keyword_extractor",
+    # 人名映射
+    "NameMappingService",
     # 播放器
     "NewsPlayer",
     "run_player",

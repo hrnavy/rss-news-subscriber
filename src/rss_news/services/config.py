@@ -50,7 +50,8 @@ class DaemonConfig:
     
     enabled: bool = True
     fetch_interval: int = 3600  # 抓取间隔（秒）
-    llm_interval: int = 7200    # LLM处理间隔（秒）
+    wiki_interval: int = 7200   # Wiki构建间隔（秒）
+    health_check_interval: int = 86400  # 健康检查间隔（秒），默认24小时
     log_file: str = "logs/daemon.log"
 
 
@@ -223,7 +224,8 @@ def create_config_from_dict(data: dict[str, Any]) -> Config:
         config.daemon = DaemonConfig(
             enabled=daemon_data.get("enabled", config.daemon.enabled),
             fetch_interval=daemon_data.get("fetch_interval", config.daemon.fetch_interval),
-            llm_interval=daemon_data.get("llm_interval", config.daemon.llm_interval),
+            wiki_interval=daemon_data.get("wiki_interval", config.daemon.wiki_interval),
+            health_check_interval=daemon_data.get("health_check_interval", config.daemon.health_check_interval),
             log_file=daemon_data.get("log_file", config.daemon.log_file),
         )
     

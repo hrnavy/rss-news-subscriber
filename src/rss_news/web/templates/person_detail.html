@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}{{ person.name }} - Wiki Viewer{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url_for('wiki.index') }}">首页</a></li>
+        <li class="breadcrumb-item"><a href="{{ url_for('wiki.people_list') }}">人物</a></li>
+        <li class="breadcrumb-item active">{{ person.name }}</li>
+    </ol>
+</nav>
+
+<h2 class="mb-3">{{ person.name }}</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header">简介</div>
+            <div class="card-body">
+                <p>{{ person.description }}</p>
+            </div>
+        </div>
+
+        {% if person.related_people %}
+        <div class="card mb-4">
+            <div class="card-header">相关人物</div>
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2">
+                    {% for name in person.related_people %}
+                    <a href="{{ url_for('wiki.person_detail', name=name) }}" class="btn btn-outline-primary btn-sm">{{ name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if person.news %}
+        <div class="card mb-4">
+            <div class="card-header">相关新闻</div>
+            <ul class="list-group list-group-flush">
+                {% for item in person.news %}
+                <li class="list-group-item">
+                    <a href="{{ url_for('wiki.article_detail', article_id=item.article_id) }}">{{ item.title }}</a>
+                    {% if item.source %}<span class="badge bg-secondary ms-2">{{ item.source }}</span>{% endif %}
+                    <small class="text-muted d-block">{{ item.date }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if person.timeline %}
+        <div class="card mb-4">
+            <div class="card-header">时间线</div>
+            <ul class="list-group list-group-flush">
+                {% for item in person.timeline %}
+                <li class="list-group-item">
+                    <strong>{{ item.date }}</strong>: {{ item.content }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if person.generated_at %}
+<small class="text-muted">生成时间: {{ person.generated_at }}</small>
+{% endif %}
+{% endblock %}
